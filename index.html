@@ -5,6 +5,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Document</title>
+    <script src="https://momentjs.com/downloads/moment.min.js"></script>
     <style>
         body {
             margin: 0;
@@ -33,6 +34,15 @@
             position: fixed;
             top: 0;
         }
+
+        #time {
+            position: absolute;
+            top: 21vw;
+            color: white;
+            font-size: 6vw;
+            padding-left: 32vw;
+            box-sizing: border-box;
+        }
     </style>
 </head>
 <body>
@@ -44,5 +54,18 @@
         <img src="1.png">
         <img src="2.png">
     </div>
+    <div id="time"></div>
+    <div id="name"></div>
+    <div id="test"></div>
+
+    <script>
+        window.onload = () => {
+            const time = document.getElementById('time');
+            const test = document.getElementById('test');
+            setInterval(() => {
+                time.innerText = moment().format('YYYY-MM-DD hh:mm:ss');
+            }, 1000);
+        }
+    </script>
 </body>
 </html>

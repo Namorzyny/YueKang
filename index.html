@@ -86,9 +86,9 @@
             const time = document.getElementById('time');
             const test = document.getElementById('test');
             setInterval(() => {
-                time.innerText = moment().format('YYYY-MM-DD hh:mm:ss');
+                time.innerText = moment().format('YYYY-MM-DD HH:mm:ss');
             }, 1000);
-            test.innerText = moment(Date.now() - 48 * 3600000 - Math.random() * 10000000).format('YYYY-MM-DD hh:mm');
+            test.innerText = moment(Date.now() - 48 * 3600000 - Math.random() * 10000000).format('YYYY-MM-DD HH:mm');
         }
     </script>
 </body>

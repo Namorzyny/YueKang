@@ -9,19 +9,28 @@
         body {
             margin: 0;
             background-color: rgb(66, 147, 244);
+            padding-top: 15vw;
         }
 
-        #img {
+        #title, #img {
             width: 100%;
         }
 
-        #img img {
+        div img {
             display: block;
             width: 100%;
+        }
+
+        #title {
+            position: fixed;
+            top: 0;
         }
     </style>
 </head>
 <body>
+    <div id="title">
+        <img src="title.png">
+    </div>
     <div id="img">
         <img src="1.png">
         <img src="2.png">

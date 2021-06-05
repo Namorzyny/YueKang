@@ -29,6 +29,7 @@
             height: var(--height);
             position: fixed;
             top: calc(0px - var(--height));
+            z-index: 1;
         }
 
         #title {
@@ -45,6 +46,14 @@
             padding-left: 28vw;
             box-sizing: border-box;
             font-weight: 500;
+        }
+
+        #name {
+            position: absolute;
+            top: 44vw;
+            font-size: 6vw;
+            padding-left: 32vw;
+            box-sizing: border-box;
         }
 
         #test {
@@ -68,7 +77,7 @@
         <img src="2.png">
     </div>
     <div id="time"></div>
-    <div id="name"></div>
+    <div id="name">王*</div>
     <div id="test"></div>
 
     <script>

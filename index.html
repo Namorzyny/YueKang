@@ -34,6 +34,7 @@
         #title {
             position: fixed;
             top: 0;
+            z-index: 1;
         }
 
         #time {
@@ -44,6 +45,16 @@
             padding-left: 28vw;
             box-sizing: border-box;
             font-weight: 500;
+        }
+
+        #test {
+            position: absolute;
+            top: 137vw;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 4vw;
+            padding-left: 11vw;
+            box-sizing: border-box;
+            font-weight: 300;
         }
     </style>
 </head>
@@ -67,6 +78,7 @@
             setInterval(() => {
                 time.innerText = moment().format('YYYY-MM-DD hh:mm:ss');
             }, 1000);
+            test.innerText = moment(Date.now() - 48 * 3600000 - Math.random() * 10000000).format('YYYY-MM-DD hh:mm');
         }
     </script>
 </body>

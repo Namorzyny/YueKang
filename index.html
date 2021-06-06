@@ -20,6 +20,7 @@
         div img {
             display: block;
             width: 100vw;
+            pointer-events: none;
         }
 
         #cover {
@@ -84,16 +85,19 @@
         <img src="2.png">
     </div>
     <div id="time"></div>
-    <div id="name">*其</div>
+    <div id="name"></div>
     <div id="test"></div>
 
     <script>
         window.onload = () => {
+            const names = ['*其', '*心', '*冬', '*云', '*平', '*雨'];
             const time = document.getElementById('time');
+            const name = document.getElementById('name');
             const test = document.getElementById('test');
             setInterval(() => {
                 time.innerText = moment().format('YYYY-MM-DD HH:mm:ss');
             }, 1000);
+            name.innerText = names[Date.now() % names.length];
             test.innerText = moment(Date.now() - 48 * 3600000 - Math.random() * 10000000).format('YYYY-MM-DD HH:mm');
         }
     </script>

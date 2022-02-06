@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="theme-color" content="#4293f4">
@@ -81,31 +82,87 @@
 
         #time {
             position: absolute;
-            top: 26.25vw;
-            left: 59vw;
-            width: fit-content;
+            top: 8.25%;
+            left: 50%;
+            width: 75vw;
+            height: 1.5em;
+            line-height: 1.5em;
             color: white;
-            font-size: 6.5vw;
-            font-weight: 500;
+            font-size: 1.5em;
+            font-weight: bold;
             transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.2);
+            border-bottom-right-radius: .75em 50%;
+            border-bottom-left-radius: .75em 50%;
+            border-top-right-radius: .75em 50%;
+            border-top-left-radius: .75em 50%;
+            text-align: center;
+        }
+
+        #time2 {
+            position: absolute;
+            top: 8.25%;
+            left: 50%;
+            width: 75vw;
+            height: 1.5em;
+            font-size: 1.5em;
+            border-bottom-right-radius: .75em 50%;
+            border-bottom-left-radius: .75em 50%;
+            border-top-right-radius: .75em 50%;
+            border-top-left-radius: .75em 50%;
+            border: 1px solid white;
+            animation: .8s anim infinite;
+            transform-origin: center;
+        }
+
+        @keyframes anim {
+            from {
+                transform: translate(-50%, -50%) scaleY(1) scaleX(1);
+                opacity: 1;
+            }
+
+            to {
+                transform: translate(-50%, -50%) scaleY(1.2) scaleX(1.03);
+                opacity: 0;
+            }
         }
 
         #name {
             position: absolute;
-            top: 48.5vw;
-            left: 36vw;
+            top: 13%;
+            left: 50%;
             width: fit-content;
-            font-size: 5vw;
+            color: white;
+            font-size: 4.5vw;
+            font-weight: bold;
             transform: translate(-50%, -50%);
+        }
+
+        #qr {
+            position: absolute;
+            top: 27%;
+            left: 50%;
+            width: 47%;
+            transform: translate(-50%, -50%);
+        }
+
+        #report {
+            position: absolute;
+            top: 43%;
+            left: 53%;
+            width: fit-content;
+            color: white;
+            font-size: 4vw;
+            font-weight: bold;
         }
 
         #test {
             position: absolute;
-            top: 140.5vw;
-            left: 27vw;
+            top: 59%;
+            left: 50%;
             width: fit-content;
             color: rgb(153, 153, 153);
-            font-size: 4vw;
+            font-size: 0.8em;
             font-weight: 300;
             transform: translate(-50%, -50%);
         }
@@ -122,12 +179,18 @@
         }
     </script>
 </head>
+
 <body>
     <div id="cover"></div>
     <div id="bar">
         <img class="full-width" src="./assets/suikang_bar.png">
     </div>
     <div id="main">
+        <div id="time"></div>
+        <div id="time2"></div>
+        <div id="name"></div>
+        <img id="qr" src="./assets/qr1.png">
+        <div id="report">2022/1/11</div>
         <img class="full-width" src="./assets/suikang_main.png">
     </div>
     <div id="others">
@@ -135,8 +198,9 @@
             <img class="full-width" src="./assets/suikang_xingcheng.png">
         </div>
         <div id="cards">
-            <div class="card shadow">
+            <div class="card shadow" style="position: relative;">
                 <img class="full-width" src="./assets/suikang_card_left.png">
+                <div id="test"></div>
             </div>
             <div class="card shadow">
                 <img class="full-width" src="./assets/suikang_card_right.png">
@@ -144,22 +208,22 @@
         </div>
         <img class="full-width" src="./assets/suikang_footer.png">
     </div>
-    <!-- <div id="time"></div>
-    <div id="name"></div>
-    <div id="test"></div> -->
 
     <script>
-        // window.onload = () => {
-        //     const names = ['*其', '*心', '*冬', '*云', '*平', '*雨'];
-        //     const time = document.getElementById('time');
-        //     const name = document.getElementById('name');
-        //     const test = document.getElementById('test');
-        //     setInterval(() => {
-        //         time.innerText = moment().format('YYYY-MM-DD HH:mm:ss');
-        //     }, 1000);
-        //     name.innerText = names[Date.now() % names.length];
-        //     test.innerText = moment(Date.now() - 72 * 3600000 - Math.random() * 10000000).format('YYYY-MM-DD HH:mm');
-        // }
+        window.onload = () => {
+            const names = ['*其', '*心', '*冬', '*云', '*平', '*雨'];
+            const time = document.getElementById('time');
+            const name = document.getElementById('name');
+            const report = document.getElementById('report');
+            const test = document.getElementById('test');
+            setInterval(() => {
+                time.innerText = moment().format('YYYY/MM/DD HH:mm:ss');
+            }, 1000);
+            name.innerText = names[Date.now() % names.length];
+            test.innerText = moment(Date.now() - 72 * 3600000 - Math.random() * 10000000).format('YYYY-MM-DD HH:mm');
+            report.innerText = moment(Date.now() - 120 * 3600000 - Math.random() * 10000000).format('YYYY/MM/DD');
+        }
     </script>
 </body>
+
 </html>

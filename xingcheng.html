@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#f6f6f6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <title>通信大数据行程卡</title>
+    <script src="https://momentjs.com/downloads/moment.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            background-color: white;
+            font-family: -apple-system, sans-serif;
+            overflow-x: hidden;
+            width: 100vw;
+        }
+
+        img {
+            display: block;
+            pointer-events: none;
+        }
+
+        .full-width {
+            width: 100%;
+        }
+
+        #cover {
+            background-color: #4293f4;
+            width: 100%;
+            --height: 10vw;
+            height: var(--height);
+            position: fixed;
+            top: calc(0px - var(--height));
+            z-index: 10;
+        }
+
+        #bar {
+            position: fixed;
+            top: 0;
+            z-index: 2;
+            width: 100%;
+        }
+
+        #main {
+            margin-top: 4em;
+            width: 100%;
+        }
+
+        #overlay {
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            z-index: 1;
+            display: flex;
+        }
+
+        #overlay-cover {
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            opacity: 0.5;
+            position: absolute;
+        }
+
+        #overlay-dialog {
+            width: 80%;
+            height: fit-content;
+            z-index: 2;
+            margin: auto;
+            border-radius: 1em;
+            overflow: hidden;
+        }
+
+        * {
+            user-select: none;
+            -webkit-user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="cover"></div>
+    <div id="bar">
+        <img class="full-width" src="./assets/xingcheng_bar.png">
+    </div>
+    <div id="main">
+        <img class="full-width" src="./assets/xingcheng_bg.png">
+    </div>
+    <div id="overlay">
+        <div id="overlay-cover"></div>
+        <div id="overlay-dialog">
+            <img class="full-width" src="./assets/xingcheng_confirm.png">
+        </div>
+    </div>
+
+    <script>
+    </script>
+</body>
+</html>

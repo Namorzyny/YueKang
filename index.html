@@ -6,37 +6,77 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, user-scalable=no" />
-    <title>YueKang</title>
+    <title>粤康码（广州）</title>
     <script src="https://momentjs.com/downloads/moment.min.js"></script>
     <style>
         body {
             margin: 0;
-            background-color: rgb(66, 147, 244);
-            padding-top: 15vw;
+            background-color: #4293f4;
             font-family: -apple-system, sans-serif;
             overflow-x: hidden;
+            width: 100vw;
+            overscroll-behavior: none;
         }
 
-        div img {
+        img {
             display: block;
-            width: 100vw;
             pointer-events: none;
         }
 
+        .full-width {
+            width: 100%;
+        }
+
         #cover {
-            background-color: rgb(66, 147, 244);
-            width: 100vw;
+            background-color: #4293f4;
+            width: 100%;
             --height: 10vw;
             height: var(--height);
             position: fixed;
             top: calc(0px - var(--height));
-            z-index: 1;
+            z-index: 2;
         }
 
-        #title {
+        #bar {
             position: fixed;
             top: 0;
             z-index: 1;
+            width: 100%;
+        }
+
+        #main {
+            width: 100%;
+        }
+
+        #others {
+            background-color: #fdfdfd;
+            width: 100%;
+            padding-top: 1.2em;
+            --margin: 2.2em;
+        }
+
+        .shadow {
+            border-radius: 0.5em;
+            box-shadow: 0 0 1em #ddd;
+            overflow: hidden;
+        }
+
+        .card {
+            width: 47%;
+        }
+
+        #xingcheng {
+            width: calc(100vw - var(--margin));
+            margin: auto;
+            margin-bottom: 1.2em;
+        }
+
+        #cards {
+            width: calc(100vw - var(--margin));
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1.2em;
         }
 
         #time {
@@ -75,32 +115,51 @@
             -webkit-user-select: none;
         }
     </style>
+
+    <script>
+        function toXingCheng() {
+            location.href = './xingcheng.html';
+        }
+    </script>
 </head>
 <body>
     <div id="cover"></div>
-    <div id="title">
-        <img src="title.png">
+    <div id="bar">
+        <img class="full-width" src="./assets/suikang_bar.png">
     </div>
-    <div id="img">
-        <img src="1.png">
-        <img src="2.png">
+    <div id="main">
+        <img class="full-width" src="./assets/suikang_main.png">
     </div>
-    <div id="time"></div>
+    <div id="others">
+        <div id="xingcheng" class="shadow" onclick="toXingCheng();">
+            <img class="full-width" src="./assets/suikang_xingcheng.png">
+        </div>
+        <div id="cards">
+            <div class="card shadow">
+                <img class="full-width" src="./assets/suikang_card_left.png">
+            </div>
+            <div class="card shadow">
+                <img class="full-width" src="./assets/suikang_card_right.png">
+            </div>
+        </div>
+        <img class="full-width" src="./assets/suikang_footer.png">
+    </div>
+    <!-- <div id="time"></div>
     <div id="name"></div>
-    <div id="test"></div>
+    <div id="test"></div> -->
 
     <script>
-        window.onload = () => {
-            const names = ['*其', '*心', '*冬', '*云', '*平', '*雨'];
-            const time = document.getElementById('time');
-            const name = document.getElementById('name');
-            const test = document.getElementById('test');
-            setInterval(() => {
-                time.innerText = moment().format('YYYY-MM-DD HH:mm:ss');
-            }, 1000);
-            name.innerText = names[Date.now() % names.length];
-            test.innerText = moment(Date.now() - 72 * 3600000 - Math.random() * 10000000).format('YYYY-MM-DD HH:mm');
-        }
+        // window.onload = () => {
+        //     const names = ['*其', '*心', '*冬', '*云', '*平', '*雨'];
+        //     const time = document.getElementById('time');
+        //     const name = document.getElementById('name');
+        //     const test = document.getElementById('test');
+        //     setInterval(() => {
+        //         time.innerText = moment().format('YYYY-MM-DD HH:mm:ss');
+        //     }, 1000);
+        //     name.innerText = names[Date.now() % names.length];
+        //     test.innerText = moment(Date.now() - 72 * 3600000 - Math.random() * 10000000).format('YYYY-MM-DD HH:mm');
+        // }
     </script>
 </body>
 </html>
